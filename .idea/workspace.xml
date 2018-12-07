@@ -61,8 +61,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -129,9 +129,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="927" />
+    <option name="x" value="842" />
     <option name="y" value="23" />
-    <option name="width" value="753" />
+    <option name="width" value="838" />
     <option name="height" value="957" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -260,7 +260,7 @@
       <workItem from="1544093445105" duration="641000" />
       <workItem from="1544153466366" duration="159000" />
       <workItem from="1544153701313" duration="12292000" />
-      <workItem from="1544175806831" duration="1334000" />
+      <workItem from="1544175806831" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="日志类">
       <created>1544176854467</created>
@@ -280,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14426000" />
+    <option name="totallyTimeSpent" value="14511000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,8 +544,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding />
         </state>
       </provider>
