@@ -19,6 +19,9 @@ class Boot
     {
         try {
 
+            // 日志
+            Log::init();
+
             // 路由
             $router = Router::getInstance();
 
@@ -31,8 +34,8 @@ class Boot
 
         } catch (\Exception $e) {
 
-            dump($e->getMessage());
-            dd($e->getTrace());
+            Log::log($e->getMessage());
+            Log::log($e->getTrace());
         }
     }
 

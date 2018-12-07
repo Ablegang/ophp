@@ -24,7 +24,9 @@ define('APP', ROOT . '/application');
 define('VIEW', ROOT . '/views');
 define('CONFIG', ROOT . '/config');
 
-define('DEBUG', true);
+define('DEBUG', false);
+
+ini_set('date.timezone', 'PRC'); // 设置时区
 
 if (DEBUG) {
     ini_set('display_errors', 'On');
@@ -32,8 +34,8 @@ if (DEBUG) {
     ini_set('display_errors', 'Off');
 }
 
-require_once CORE.'/common/functions.php'; // 除类和命名空间相关以外的文件、文件夹，全部以小写命名
-require_once CORE.'/Boot.php';
+require_once CORE . '/common/functions.php'; // 除类和命名空间相关以外的文件、文件夹，全部以小写命名
+require_once CORE . '/Boot.php';
 
 spl_autoload_register('\Object\Boot::load'); // 自动加载
 

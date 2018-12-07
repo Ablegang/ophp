@@ -13,8 +13,19 @@ namespace Object;
 
 class Log
 {
-    public function __construct()
-    {
+    private static $driver;
 
+    // 找到合适的驱动
+    public static function init()
+    {
+        $driver = config('log.driver');
+        $class = "Object\Driver\Log\\$driver";
+        self::$driver = new $class;
+    }
+
+    // 记录日志
+    public static function log($content, $file = null)
+    {
+        self::$driver->log($content,$file);
     }
 }
