@@ -17,8 +17,7 @@ class Config
 
     public static function get($key)
     {
-
-        if (!self::$configMap[$key]) {
+        if (!isset(self::$configMap[$key])) {
             $fileName = explode('.', $key)[0] ?? '';
             $file = CONFIG . '/' . $fileName . '.php';
             if (!file_exists($file)) {
@@ -30,7 +29,6 @@ class Config
                 self::$configMap[$fileName . '.' . $k] = $v;
             }
         }
-
         return self::$configMap[$key];
     }
 }

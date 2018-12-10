@@ -11,6 +11,9 @@
 
 namespace Object;
 
+use Twig_Loader_Filesystem;
+use Twig_Environment;
+
 class Controller
 {
     public $assignData = [];
@@ -22,13 +25,17 @@ class Controller
 
     public function display($view = '')
     {
-        $path = VIEW . '/' . CONTROLLER;
-        $file = $path . '/' . ($view ?: ACTION) . '.html';
-        if (file_exists($file)) {
-            extract($this->assignData);
-            include $file;
-        } else {
-            throw new \Exception('模板不存在：' . $file);
-        }
+        $file = CONTROLLER . '/' . ($view ?: ACTION) . '.html'; // 模板文件
+        $templatePath = config('view.path') ?: APP . '/views'; // 总模板路径
+        $templateCachePath = config('view.cachePath') ?: CACHE . '/views'; // 缓存路径
+
+        $loader = new Twig_Loader_Filesystem($templatePath);
+        // 这两个路径如果传入错误，会报 There are no registered paths for namespace "__main__". Error
+        $twig = new Twig_Environment($loader, [
+            'cache' => $templateCachePath,
+            'debug' => DEBUG, // 调试模式开启，则不会有模板缓存
+        ]);
+
+        $twig->display($file,$this->assignData);
     }
 }

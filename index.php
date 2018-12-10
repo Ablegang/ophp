@@ -23,6 +23,7 @@ define('CORE', ROOT . '/object'); // 统一框架规范，定义目录的结尾�
 define('APP', ROOT . '/application');
 define('VIEW', ROOT . '/views');
 define('CONFIG', ROOT . '/config');
+define('CACHE', ROOT . '/cache');
 
 define('DEBUG', true);
 

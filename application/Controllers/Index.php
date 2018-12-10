@@ -20,6 +20,8 @@ class Index extends Controller
 {
     public function index()
     {
-        dump((new User())->lists());
+        $this->assign('ab',23);
+        $this->assign('aba',23);
+        $this->display();
     }
 }

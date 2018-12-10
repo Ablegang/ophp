@@ -11,7 +11,8 @@
     "php": ">= 7.1",
     "filp/whoops": "*",
     "symfony/var-dumper": "*",
-    "catfan/Medoo": "^1.6"
+    "catfan/Medoo": "^1.6",
+    "twig/twig": "^2.5"
   },
   "repositories": {
     "packagist": {
