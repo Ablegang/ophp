@@ -1,25 +1,24 @@
 <?php
 // +----------------------------------------------------------------------
-// | User.php
+// | Users.php
 // +----------------------------------------------------------------------
 // | Description: 
 // +----------------------------------------------------------------------
-// | Time: 2018/12/7 下午3:05
+// | Time: 2018/12/10 上午11:39
 // +----------------------------------------------------------------------
 // | Author: Object,半醒的狐狸<2252390865@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Application\Controllers;
+namespace Application\Model;
 
-use Application\Model\User;
-use Medoo\Medoo;
 use Object\Model;
-use Object\Controller;
 
-class Index extends Controller
+class User extends Model
 {
-    public function index()
+    protected $table = 'users';
+
+    public function lists()
     {
-        dump((new User())->lists());
+        return $this->select($this->table,'*');
     }
 }

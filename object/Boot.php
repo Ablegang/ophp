@@ -36,6 +36,10 @@ class Boot
 
             Log::log($e->getMessage());
             Log::log($e->getTrace());
+            if (DEBUG) {
+                throw $e;
+            }
+
         }
     }
 

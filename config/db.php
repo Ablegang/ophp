@@ -13,9 +13,16 @@ return [
     'driver' => 'pdo',
 
     'pdo' => [
-        'dsn' => "mysql:host=mysql;dbname=laravson",
+        'database_type' => 'mysql',
+        'database_name' => 'laravson',
+        'server' => 'mysql',
         'username' => 'root',
         'password' => 'root',
+        'charset' => 'utf8',
+        'port' => 3306,
+//        'prefix' => '',
+        'logging' => true, // 日志，如果禁用的话，可以得到更好的性能
+        // 'socket' => '/tmp/mysql.sock', // socket方式连接mysql
     ],
 
 ];
