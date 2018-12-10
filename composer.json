@@ -10,6 +10,13 @@
   "require": {
     "php": ">= 7.1",
     "filp/whoops": "*",
-    "symfony/var-dumper": "*"
+    "symfony/var-dumper": "*",
+    "catfan/Medoo": "^1.6"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
   }
 }
