@@ -24,11 +24,16 @@ define('APP', ROOT . '/application');
 define('VIEW', ROOT . '/views');
 define('CONFIG', ROOT . '/config');
 
-define('DEBUG', false);
+define('DEBUG', true);
 
 ini_set('date.timezone', 'PRC'); // 设置时区
 
+include_once "vendor/autoload.php";
+
 if (DEBUG) {
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
     ini_set('display_errors', 'On');
 } else {
     ini_set('display_errors', 'Off');
