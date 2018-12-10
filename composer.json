@@ -1,0 +1,15 @@
+{
+  "name": "object php",
+  "description": "object php , a simple framework for php 7",
+  "type": "framework",
+  "keywords": [
+    "php",
+    "object",
+    "php framework"
+  ],
+  "require": {
+    "php": ">= 7.1",
+    "filp/whoops": "*",
+    "symfony/var-dumper": "*"
+  }
+}
