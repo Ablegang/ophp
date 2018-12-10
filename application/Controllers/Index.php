@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | User.php
 // +----------------------------------------------------------------------
-// | Description: 
+// | Description: 默认控制器
 // +----------------------------------------------------------------------
 // | Time: 2018/12/7 下午3:05
 // +----------------------------------------------------------------------
@@ -12,16 +12,12 @@
 namespace Application\Controllers;
 
 use Application\Model\User;
-use Medoo\Medoo;
-use Object\Model;
 use Object\Controller;
 
 class Index extends Controller
 {
     public function index()
     {
-        $this->assign('ab',23);
-        $this->assign('aba',23);
         $this->display();
     }
 }

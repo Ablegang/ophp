@@ -17,6 +17,9 @@ class Config
 
     public static function get($key)
     {
+        /**
+         * 一个配置文件被读取过一次后，会自动将该文件的整个数组保存在configMap中。
+         */
         if (!isset(self::$configMap[$key])) {
             $fileName = explode('.', $key)[0] ?? '';
             $file = CONFIG . '/' . $fileName . '.php';

@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | object.php
 // +----------------------------------------------------------------------
-// | Description: 启动文件
+// | Description: 启动类
 // +----------------------------------------------------------------------
 // | Time: 2018/12/7 上午11:54
 // +----------------------------------------------------------------------
@@ -27,26 +27,35 @@ class Boot
 
             // 控制器
             $controller = 'Application\Controllers\\' . $router->controller;
+
+            // 操作
             $action = $router->action;
+
             define('CONTROLLER', $router->controller);
             define('ACTION', $router->action);
+
             (new $controller())->$action(); // 调用控制器
 
         } catch (\Exception $e) {
 
+            // 记录异常日志
             Log::log($e->getMessage());
             Log::log($e->getTrace());
+
             if (DEBUG) {
-                throw $e;
+                throw $e; // 用于面板显示
             }
 
         }
     }
 
+    // application和object目录下的自动加载
     public static function load($class)
     {
         $filePath = str_replace('\\', '/', $class); // 将命名空间和类字符串中的 反斜杠 替换成 斜杠
-        $filePath = str_replace('Object/', CORE . '/', $filePath); // 如果是Object命名空间，则替换为已定义好的路径
+
+        // 首字母大小写替换
+        $filePath = str_replace('Object/', CORE . '/', $filePath);
         $filePath = str_replace('Application/', APP . '/', $filePath);
 
         // linux文件系统严格区分大小写，所以当文件夹是小写，命名空间是大写的时候，需要注意一下，另外，composer的自动加载可以通过映射解决大小写问题

@@ -29,9 +29,11 @@ class Router
 
         $query = trim(trim(trim($_SERVER['REQUEST_URI'], '/')), config('route.suffix'));
         if ($query == '') {
+            // 默认controller和action
             $this->action = config('route.action');
             $this->controller = config('route.controller');
         } else {
+            // 拆分和组装query到$_GET中
             $params = explode('/', $query);
             $this->controller = $params[0] ?? '';
             $this->action = $params[1] ?? '';
